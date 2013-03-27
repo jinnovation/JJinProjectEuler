@@ -20,11 +20,8 @@ int isprime(int n)
 int main()
 {
   clock_t begin = clock();
-
   unsigned long long int sum = 0;
-
   unsigned long int L = 2000000;
-
   unsigned long int c;
 
   for (c=2 ; c<L ; c++)
