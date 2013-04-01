@@ -16,7 +16,7 @@ def pal10(n):
 
 # given base 10, return palindrome-ness in base 2
 def pal2(n):
-    return pal10(bin(n)[2:])
+    return pal10(bin(n)[2:]) # first two chars of binary '0' & 'b'
     
 sum = 0
 
