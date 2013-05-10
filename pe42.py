@@ -13,12 +13,17 @@ def wordToNum(word):
 def wordIsTri(word):
     # TODO
     return True
+
+def generateTris():
+    tris = []
     
 
 words = [word.strip('"\n').upper() for word in
          open("words.txt",'r').read().split(',')]
 
 wordSums = [wordToNum(word) for word in words]
+
+tris = [] # TODO
 
 print words
 print wordSums
