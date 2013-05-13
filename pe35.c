@@ -74,5 +74,5 @@ int main()
     if (isCPrime(i)) out++;
 
   printf("%d\n", out);
-  return out;
+  return 0;
 }
