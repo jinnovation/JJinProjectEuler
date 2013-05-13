@@ -1,25 +1,35 @@
+/* The number, 197, is called a circular prime because all rotations of the
+   digits: 197, 971, and 719, are themselves prime. 
+
+   There are thirteen such primes below 100: 2, 3, 5, 7, 11, 13, 17, 31, 37, 71,
+   73, 79, and 97. 
+
+   How many circular primes are there below one million? */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
+#define MAX 1000000
+#define MAXLEN 7
+
 /* returns 1 if any digit in given number is 0 */
 int any_zero(int n)
 {
-  char nstring[7];
+  char nstring[MAXLEN];
   sprintf(nstring,"%d",n);
 
   int len = strlen(nstring);
 
   int i;
-  for (i=0 ; i<len ; i++) {
+  for (i=0 ; i<len ; i++)
     if (nstring[i]=='0')
       return 1;
-  }
   
   return 0;
 }
 
-
+/* return 1 if given int is prime */
 int isPrime(int n)
 {
   unsigned int c;
@@ -36,13 +46,13 @@ int isPrime(int n)
 
 /* given number, output array of all possible rotations of digits */
 /* Ex:  197 outputs [197, 971, 719] */
-int *cpermute(int n)
+int *cPermute(int n)
 {
   return 0;
 }
 
 /* return 1 if number is circular prime */
-int is_cprime(int n)
+int isCPrime(int n)
 {
   int i;
   int *permutes = cpermute(n);
@@ -57,6 +67,12 @@ int is_cprime(int n)
 
 int main()
 {
+  int out = 0;
 
-  return 0;
+  int i;
+  for (i=0 ; i<MAX ; i++)
+    if (isCPrime(i)) out++;
+
+  printf("%d\n", out);
+  return out;
 }
