@@ -16,7 +16,9 @@
 #define MAX 1000000
 #define MAXLEN 7
 
+/***********************************************/
 /* returns 1 if any digit in given number is 0 */
+/***********************************************/
 int any_zero(int n)
 {
   char nstring[MAXLEN];
@@ -32,7 +34,9 @@ int any_zero(int n)
   return 0;
 }
 
+/**********************************/
 /* return 1 if given int is prime */
+/**********************************/
 int isPrime(int n)
 {
   unsigned int c;
@@ -47,13 +51,19 @@ int isPrime(int n)
   return 1;
 }
 
+/********************************************************/
 /* given number, return number of digits in that number */
+/********************************************************/
 int numDigits(int n)
 {
   return log10(n)+1;
 }
 
+
+
+/********************************************/
 /* given number, output array of its digits */
+/********************************************/
 int *numToDigits(int n)
 {
   int len = numDigits(n);
@@ -70,14 +80,18 @@ int *numToDigits(int n)
 }
 
 /* TODO */
+/******************************************************************/
 /* given number, output array of all possible rotations of digits */
-/* Ex:  197 outputs [197, 971, 719] */
+/* Ex:  197 outputs [197, 971, 719]				  */
+/******************************************************************/
 int *cPermute(int n)
 {
   return 0;
 }
 
+/****************************************/
 /* return 1 if number is circular prime */
+/****************************************/
 int isCPrime(int n)
 {
   int i;
@@ -93,18 +107,12 @@ int isCPrime(int n)
 
 int main()
 {
+  int out = 0;
 
-  int *test = (int *)calloc(3,sizeof(int));
-  test = numToDigits(123);
+  int i;
+  for (i=0 ; i<MAX ; i++)
+    if (isCPrime(i)) out++;
 
-  printf("%d %d %d\n",test[0],test[1],test[2]);
-
-  /* int out = 0; */
-
-  /* int i; */
-  /* for (i=0 ; i<MAX ; i++) */
-  /*   if (isCPrime(i)) out++; */
-
-  /* printf("%d\n", out); */
-  /* return 0; */
+  printf("%d\n", out);
+  return 0;
 }
