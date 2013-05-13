@@ -9,6 +9,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <math.h>
 
 #define MAX 1000000
 #define MAXLEN 7
@@ -44,6 +45,29 @@ int isPrime(int n)
   return 1;
 }
 
+/* given number, return number of digits in that number */
+int numDigits(int n)
+{
+  return log10(n)+1;
+}
+
+/* given number, output array of its digits */
+int *numToDigits(int n)
+{
+  int len = numDigits(n);
+  int *out = (int *)malloc(sizeof(int)*len);
+
+  char nstring[len];
+  sprintf(nstring,"%d",n);
+
+  int i;
+  for (i=0 ; i<len ; i++)
+    out[i] = nstring[i] - '0';
+  
+  return out;
+}
+
+/* TODO */
 /* given number, output array of all possible rotations of digits */
 /* Ex:  197 outputs [197, 971, 719] */
 int *cPermute(int n)
@@ -55,7 +79,7 @@ int *cPermute(int n)
 int isCPrime(int n)
 {
   int i;
-  int *permutes = cpermute(n);
+  int *permutes = cPermute(n);
   int numPermutes = sizeof(permutes)/sizeof(int);
 
   for (i=0 ; i < numPermutes ; i++)
@@ -67,12 +91,18 @@ int isCPrime(int n)
 
 int main()
 {
-  int out = 0;
 
-  int i;
-  for (i=0 ; i<MAX ; i++)
-    if (isCPrime(i)) out++;
+  int *test = (int *)malloc(sizeof(int)*2);
+  test = numToDigits(10);
 
-  printf("%d\n", out);
-  return 0;
+  printf("%d %d\n",test[0],test[1]);
+
+  /* int out = 0; */
+
+  /* int i; */
+  /* for (i=0 ; i<MAX ; i++) */
+  /*   if (isCPrime(i)) out++; */
+
+  /* printf("%d\n", out); */
+  /* return 0; */
 }
