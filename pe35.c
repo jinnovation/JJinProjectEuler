@@ -55,7 +55,7 @@ int numDigits(int n)
 int *numToDigits(int n)
 {
   int len = numDigits(n);
-  int *out = (int *)malloc(sizeof(int)*len);
+  int *out = (int *)calloc(len,sizeof(int));
 
   char nstring[len];
   sprintf(nstring,"%d",n);
@@ -92,10 +92,10 @@ int isCPrime(int n)
 int main()
 {
 
-  int *test = (int *)malloc(sizeof(int)*2);
-  test = numToDigits(10);
+  int *test = (int *)calloc(3,sizeof(int));
+  test = numToDigits(123);
 
-  printf("%d %d\n",test[0],test[1]);
+  printf("%d %d %d\n",test[0],test[1],test[2]);
 
   /* int out = 0; */
 
