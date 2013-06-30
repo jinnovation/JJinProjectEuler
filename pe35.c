@@ -34,6 +34,7 @@ int any_zero(int n)
   return 0;
 }
 
+
 /**********************************/
 /* return 1 if given int is prime */
 /**********************************/
@@ -51,6 +52,7 @@ int isPrime(int n)
   return 1;
 }
 
+
 /********************************************************/
 /* given number, return number of digits in that number */
 /********************************************************/
@@ -58,7 +60,6 @@ int numDigits(int n)
 {
   return log10(n)+1;
 }
-
 
 
 /********************************************/
@@ -79,6 +80,7 @@ int *numToDigits(int n)
   return out;
 }
 
+
 /* TODO */
 /******************************************************************/
 /* given number, output array of all possible rotations of digits */
@@ -88,6 +90,7 @@ int *cPermute(int n)
 {
   return 0;
 }
+
 
 /****************************************/
 /* return 1 if number is circular prime */
